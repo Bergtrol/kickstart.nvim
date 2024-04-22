@@ -24,8 +24,9 @@ return {
         function()
           require('tinygit').push {}
         end,
-        desc = 'Thiny[G]it [P]ush',
+        desc = 'Tiny[G]it [P]ush',
       },
+      desc = 'Tiny[G]it',
       -- { '<down>', '<cmd>echo "Use j to move!!"<CR>', desc = "Jannie's command" },
     },
     init = function()
