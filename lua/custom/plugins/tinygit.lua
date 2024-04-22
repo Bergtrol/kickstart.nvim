@@ -1,5 +1,5 @@
 -- tinygit
--- https://github.com/windwp/nvim-autopairs
+-- https://github.com/chrisgrieser/nvim-tinygit
 
 return {
   {
