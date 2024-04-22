@@ -11,16 +11,29 @@ return {
       'ibhagwan/fzf-lua',
       'rcarriga/nvim-notify', -- optional, but will lack some features without it
     },
-    opts = {
-      on_attach = function()
-        require('tinygit').smartCommit { pushIfClean = false } -- options default to `false`
-        vim.keymap.set('n', '<leader>hc', function()
+    keys = {
+      {
+        '<leader>gc',
+        function()
           require('tinygit').smartCommit()
-        end, { desc = 'Tinygit - SmartCommit' })
-        vim.keymap.set('n', '<leader>hp', function()
+        end,
+        desc = 'Tiny[G]it Smart[C]ommit',
+      },
+      {
+        '<leader>gp',
+        function()
           require('tinygit').push {}
-        end, { desc = 'Tinygit - Push' })
-      end,
+        end,
+        desc = 'Thiny[G]it [P]ush',
+      },
+      -- { '<down>', '<cmd>echo "Use j to move!!"<CR>', desc = "Jannie's command" },
     },
+    init = function()
+      print 'Hello from tinygit init'
+    end,
+    config = function()
+      print 'Hello from tinygit config'
+      require('tinygit').setup()
+    end,
   },
 }
