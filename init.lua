@@ -827,6 +827,9 @@ require('lazy').setup({
         return '%2l:%-2v'
       end
 
+      -- MiniFiles: a column based file explorer, with editing like a buffer
+      require('mini.files').setup()
+
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
