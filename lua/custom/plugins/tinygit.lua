@@ -31,10 +31,10 @@ return {
     },
     init = function()
       print 'Hello from tinygit init'
+      require('tinygit').setup()
     end,
     config = function()
       print 'Hello from tinygit config'
-      require('tinygit').setup()
     end,
   },
 }
