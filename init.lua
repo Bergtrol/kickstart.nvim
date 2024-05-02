@@ -855,7 +855,14 @@ require('lazy').setup({
 
       -- MiniFiles: a column based file explorer, with editing like a buffer
       require('mini.files').setup()
-      vim.keymap.set('n', '-', MiniFiles.open, { desc = 'MiniFiles Open' })
+
+      local minifiles_toggle = function(...)
+        if not MiniFiles.close() then
+          MiniFiles.open(...)
+        end
+      end
+
+      vim.keymap.set('n', '-', minifiles_toggle, { desc = 'MiniFiles Open' })
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
