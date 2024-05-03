@@ -861,8 +861,10 @@ require('lazy').setup({
           MiniFiles.open(...)
         end
       end
-
-      vim.keymap.set('n', '-', minifiles_toggle, { desc = 'MiniFiles Open' })
+      local bufname = vim.api.nvim_buf_get_name(0)
+      vim.keymap.set('n', '-', function()
+        minifiles_toggle(bufname, false)
+      end, { desc = 'MiniFiles Open' })
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
